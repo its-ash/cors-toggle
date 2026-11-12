@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CORS Toggle</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <main class="card">
+    <header class="head">
+      <img id="logo" src="icons/icon-off-128.png" width="56" height="56" alt="">
+      <div>
+        <h1>CORS Toggle</h1>
+        <p class="sub">Turn cross-origin requests on or off in Chrome with one click.</p>
+      </div>
+    </header>
+
+    <label class="switch-row">
+      <span class="switch-label">Allow CORS</span>
+      <span id="state" class="state">Off</span>
+      <input id="toggle" type="checkbox" role="switch">
+      <span class="switch" aria-hidden="true"></span>
+    </label>
+    <p id="status" class="status">Off. Chrome applies normal cross-origin rules.</p>
+
+    <section id="warning" class="warning" hidden>
+      <strong>Turn it off when you finish</strong>
+      <p>While it is on, this applies to all sites. Any page you open can read responses from other sites that don't need a sign-in, including services on your local network.</p>
+    </section>
+
+    <div class="info">
+      <section>
+        <h2>What it does</h2>
+        <p>Adds <code>Access-Control-Allow-*</code> headers to fetch and XHR responses, so the browser lets your page read them.</p>
+      </section>
+      <section>
+        <h2>How to use it</h2>
+        <p>Click the toolbar icon to switch it on or off. The icon turns blue and shows <b>ON</b> while it is active.</p>
+      </section>
+      <section>
+        <h2>Limits</h2>
+        <p>Requests sent with cookies or credentials still need the server's own CORS headers, because the origin is <code>*</code>.</p>
+      </section>
+    </div>
+  </main>
+  <script src="options.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "CORS Toggle",
+  "version": "1.0.0",
+  "description": "Turn cross-origin requests on or off in Chrome with one click.",
+  "homepage_url": "https://cors.itsash.in",
+  "permissions": ["declarativeNetRequest", "storage"],
+  "host_permissions": ["<all_urls>"],
+  "background": { "service_worker": "background.js" },
+  "action": {
+    "default_title": "CORS Toggle: off (click to turn on)",
+    "default_icon": {
+      "16": "icons/icon-off-16.png",
+      "32": "icons/icon-off-32.png",
+      "48": "icons/icon-off-48.png",
+      "128": "icons/icon-off-128.png"
+    }
+  },
+  "options_ui": { "page": "options.html", "open_in_tab": true },
+  "icons": {
+    "16": "icons/icon-on-16.png",
+    "32": "icons/icon-on-32.png",
+    "48": "icons/icon-on-48.png",
+    "128": "icons/icon-on-128.png"
+  }
+}

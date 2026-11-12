@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="store.css">
+<style>
+  .pair { display: grid; grid-template-columns: 1fr 1fr; gap: 28px; width: 1140px; }
+  .pane { background: #fff; border-radius: 14px; overflow: hidden; box-shadow: 0 10px 40px rgb(11 87 208 / 0.14), 0 1px 3px rgb(0 0 0 / 0.1); }
+  .pane header { display: flex; align-items: center; gap: 10px; padding: 14px 18px; background: #f1f3f4; border-bottom: 1px solid #dadce0; font-size: 15px; font-weight: 600; }
+  .pane header img { width: 20px; height: 20px; }
+  .pane header .badge { position: static; margin-left: -6px; }
+  .pane header span.tag { margin-left: auto; font-size: 12px; font-weight: 600; padding: 3px 10px; border-radius: 10px; }
+  .bad .tag { background: #fce8e6; color: #b3261e; }
+  .good .tag { background: #e6f4ea; color: #146c2e; }
+  .code { font: 14px/1.65 ui-monospace, SFMono-Regular, Menlo, monospace; padding: 18px; height: 340px; background: #fff; }
+  .prompt { color: #1a73e8; }
+  .line { padding: 6px 10px; border-radius: 6px; margin: 6px 0; white-space: pre-wrap; word-break: break-word; }
+  .err { background: #fce8e6; color: #b3261e; }
+  .ok { background: #e6f4ea; color: #146c2e; }
+  .json { color: #444746; white-space: pre; }
+  .shot { justify-content: center; padding-top: 0; }
+  .k { color: #881391; } .s { color: #c41a16; } .n { color: #1c00cf; }
+</style>
+</head>
+<body>
+  <div class="shot">
+    <h1>Test any API from <em>localhost</em> without a proxy</h1>
+    <p class="lead">The same fetch call, with CORS Toggle off and then on.</p>
+    <div class="pair">
+      <div class="pane bad">
+        <header><img src="../../extension/icons/icon-off-32.png" alt="">Console &middot; CORS Toggle off<span class="tag">Blocked</span></header>
+        <div class="code">
+<span class="prompt">&gt;</span> await fetch("https://api.example.com/users/42")
+<div class="line err">Access to fetch at 'https://api.example.com/users/42' from origin 'http://localhost:5173' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.</div>
+<div class="line err">Uncaught TypeError: Failed to fetch</div>
+        </div>
+      </div>
+      <div class="pane good">
+        <header><img src="../../extension/icons/icon-on-32.png" alt=""><span class="badge">ON</span>Console &middot; CORS Toggle on<span class="tag">200 OK</span></header>
+        <div class="code">
+<span class="prompt">&gt;</span> await fetch("https://api.example.com/users/42")
+<div class="line ok">Response { status: 200, ok: true, type: "cors" }</div>
+<span class="prompt">&gt;</span> await res.json()
+<div class="json">{
+  <span class="k">id</span>: <span class="n">42</span>,
+  <span class="k">name</span>: <span class="s">"Ada Lovelace"</span>,
+  <span class="k">role</span>: <span class="s">"admin"</span>
+}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

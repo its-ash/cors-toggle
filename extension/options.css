@@ -1,0 +1,41 @@
+:root {
+  --blue: #0b57d0;
+  --blue-soft: #e8f0fe;
+  --ink: #1f1f1f;
+  --muted: #444746;
+  --line: #e0e4ea;
+  --surface: #f0f4f9;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+}
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; background: var(--surface); display: grid; place-items: start center; padding: 48px 20px; }
+.card { width: min(680px, 100%); background: #fff; border-radius: 28px; padding: 36px; box-shadow: 0 1px 3px rgb(0 0 0 / 0.08); }
+.head { display: flex; gap: 18px; align-items: center; margin-bottom: 28px; }
+.head img { border-radius: 14px; }
+h1 { font-size: 26px; font-weight: 500; margin: 0 0 4px; }
+.sub { margin: 0; color: var(--muted); font-size: 15px; }
+
+.switch-row { display: flex; align-items: center; gap: 12px; padding: 18px 22px; border-radius: 20px; background: var(--surface); cursor: pointer; transition: background 0.2s; }
+.switch-row:has(input:checked) { background: var(--blue-soft); }
+.switch-label { font-size: 17px; font-weight: 500; flex: 1; }
+.state { font-size: 15px; font-weight: 500; color: var(--muted); }
+.switch-row:has(input:checked) .state { color: var(--blue); }
+.switch-row input { position: absolute; opacity: 0; pointer-events: none; }
+.switch { width: 52px; height: 32px; border-radius: 16px; background: #c4c7c5; position: relative; transition: background 0.2s; flex: none; }
+.switch::after { content: ""; position: absolute; top: 4px; left: 4px; width: 24px; height: 24px; border-radius: 50%; background: #fff; transition: transform 0.2s; }
+input:checked + .switch { background: var(--blue); }
+input:checked + .switch::after { transform: translateX(20px); }
+input:focus-visible + .switch { outline: 3px solid #a8c7fa; outline-offset: 2px; }
+.status { margin: 10px 4px 0; color: var(--muted); font-size: 14px; }
+
+.warning { margin-top: 20px; padding: 16px 20px; border-radius: 18px; background: #fef7e0; border: 1px solid #f2c94c; color: #4d3800; }
+.warning strong { font-size: 15px; }
+.warning p { margin: 6px 0 0; font-size: 14px; line-height: 1.5; }
+
+.info { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 28px; }
+.info section { background: var(--surface); border-radius: 18px; padding: 16px; }
+.info h2 { font-size: 14px; font-weight: 600; margin: 0 0 6px; }
+.info p { font-size: 13px; line-height: 1.5; color: var(--muted); margin: 0; }
+code { font-size: 12px; background: #fff; padding: 1px 4px; border-radius: 4px; }
+@media (max-width: 620px) { .info { grid-template-columns: 1fr; } }

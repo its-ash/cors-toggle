@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="store.css">
+<style>
+  body { background: linear-gradient(150deg, #0b57d0 0%, #0842a0 100%); }
+  .m { width: 1400px; height: 560px; display: grid; grid-template-columns: 560px 1fr; align-items: center; padding: 0 0 0 80px; color: #fff; overflow: hidden; }
+  .row { display: flex; align-items: center; gap: 20px; }
+  .row img { width: 88px; height: 88px; border-radius: 22px; box-shadow: 0 0 0 4px rgb(255 255 255 / 0.35); }
+  h1 { font-size: 52px; font-weight: 600; margin: 0; letter-spacing: -1px; }
+  p { font-size: 24px; line-height: 1.45; color: #d3e3fd; margin: 28px 0 0; }
+  ul { list-style: none; padding: 0; margin: 28px 0 0; display: flex; gap: 12px; flex-wrap: wrap; }
+  li { background: rgb(255 255 255 / 0.14); border-radius: 16px; padding: 7px 16px; font-size: 16px; font-weight: 500; }
+  .frame { position: relative; height: 470px; margin-left: 40px; border-radius: 16px 0 0 16px; overflow: hidden; background: #f0f4f9; box-shadow: 0 20px 60px rgb(0 0 0 / 0.3); }
+  .frame iframe { border: 0; width: 900px; height: 780px; transform: scale(0.72); transform-origin: top left; position: absolute; top: -12px; left: 0; }
+</style>
+</head>
+<body>
+  <div class="m">
+    <div>
+      <div class="row"><img src="../../extension/icons/icon-on-128.png" alt=""><h1>CORS Toggle</h1></div>
+      <p>Turn cross-origin requests on or off in Chrome with one click. Built for developers and testers.</p>
+      <ul><li>One-click toggle</li><li>Clear on/off icon</li><li>No tracking</li></ul>
+    </div>
+    <div class="frame"><iframe src="../../extension/options.html?state=on"></iframe></div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="store.css">
+<style>
+  body { background: linear-gradient(150deg, #0b57d0 0%, #0842a0 100%); }
+  .tile { width: 440px; height: 280px; padding: 36px; display: flex; flex-direction: column; justify-content: center; color: #fff; }
+  .row { display: flex; align-items: center; gap: 16px; }
+  .row img { width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 0 0 3px rgb(255 255 255 / 0.35); }
+  h1 { font-size: 34px; font-weight: 600; margin: 0; letter-spacing: -0.5px; }
+  p { font-size: 18px; line-height: 1.4; margin: 22px 0 0; color: #d3e3fd; }
+  .pill { display: inline-flex; align-items: center; gap: 10px; margin-top: 18px; background: rgb(255 255 255 / 0.14); border-radius: 18px; padding: 6px 8px 6px 14px; font-size: 14px; font-weight: 600; width: max-content; }
+  .sw { width: 40px; height: 24px; border-radius: 12px; background: #fff; position: relative; }
+  .sw::after { content: ""; position: absolute; top: 4px; right: 4px; width: 16px; height: 16px; border-radius: 50%; background: #0b57d0; }
+</style>
+</head>
+<body>
+  <div class="tile">
+    <div class="row"><img src="../../extension/icons/icon-on-128.png" alt=""><h1>CORS Toggle</h1></div>
+    <p>Turn CORS on or off in Chrome<br>with one click.</p>
+    <div class="pill">Allow CORS <span class="sw"></span></div>
+  </div>
+</body>
+</html>
